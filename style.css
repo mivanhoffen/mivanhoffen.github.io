@@ -1,732 +1,579 @@
-
-
-
-html,
-body {
-    margin: 0;
+/* --- VARIABLES & RESET --- */
+:root {
+  --primary-bg: #1A2238;
+  --secondary-bg: #2f3e53;
+  --accent-color: #ffcc00; /* Comic Book Yellow */
+  --text-color: #ffffff;
+  --font-header: 'Bangers', cursive;
+  --font-body: 'Roboto', sans-serif;
 }
-body {
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  color: var(--text-color);
+  background-color: var(--primary-bg);
+  
+  /* FIX: This removes the second scrollbar */
+  overflow: hidden; 
+  height: 100%; 
+}
+
+/* --- SCROLL SNAP LAYOUT --- */
+.snap-container {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  position: relative;
- 
-}
-
-.snap-container {
-  scroll-snap-type: y mandatory;
-  overflow-y: auto;
-  height: 100vh;
-  position: relative;
+  scroll-behavior: smooth;
 }
 
 .snap-section {
   scroll-snap-align: start;
   height: 100vh;
   width: 100%;
-}
-
-
-body.no-scroll {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-}
-
-
-h3{
-    font-size: em;
-    color: white;
-    z-index: 2;
-    position: relative;
-    padding-bottom: 1rem;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
-  }
-.main-header {
-   display: flex;
-    
-}
-.logo {
-    width: 10rem;
-    height: auto;
-  }
-  h1, h2 {
-    font-size: 6em;
-    color: white;
-    z-index: 2;
-    position: relative;
-    padding-bottom: 1rem;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
-  }
-  h4 {
-    font-size: 5em;
-    color: white;
-    z-index: 2;
-    position: relative;
-    padding-bottom: 1rem;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
-    padding-left: 2rem;
-  }
-  h5{
-    font-size: 3em;
-    color: white;
-    z-index: 2;
-    position: relative;
-    padding-bottom: 1rem;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
-  }
-  .hero-wrap {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #1A2238;
-    min-height: 100vh;
-    text-align: center;
-  }
-  
-  .hero-wrap h1, .hero-wrap h2 {
-    position: relative;
-    font-size: 8em;  /* Adjusted from 100px */
-    color: white;
-    z-index: 2;
-    margin: 0.5rem 0; /* Added some vertical margin */
-  }
-  
-  .parallax-container {
-    position: relative;
-    width: 10rem;
-    height: 10rem;
-  }
-  
-  .hero-wrap h2 {
-    margin-left: 10rem; /* Reduced margin */
-  }
-  
-  .hero-wrap span {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: url(crates.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 100%;
-  }
-  
-  /* Adjustments for mobile view */
-  @media (max-width: 1100px) {
-    .hero-wrap h1, .hero-wrap h2 {
-      font-size: 5rem;  /* Reduced font size further for mobile */
-      margin: 0.5rem 0;
-    }
-  
-    .parallax-container {
-      width: 5rem;
-      height: 5rem;
-    }
-  
-    .hero-wrap h2 {
-      margin-left: 4rem; /* Further reduced margin for mobile */
-    }
-    h2 {
-      font-size: 3rem;
-    }
-   
-    .aboutme-container {
-      flex-direction: column;
-      margin: 0;
-      padding: 0;
-      align-items: center;
-    }
-  
-    .aboutme-text, .aboutme-image {
-      padding: 1em 0;
-      text-align: center;
-      margin: 0; /* Reset margin */
-    }
-  
-    .aboutme-image img {
-      max-width: 90%;
-      margin: auto; /* Center the image */
-      display: block; /* Ensure the image is a block element */
-    }
-    }
-  
-    @media (max-width: 550px) {
-      .hero-wrap h1, .hero-wrap h2 {
-        font-size: 2rem;  /* Reduced font size further for mobile */
-        margin: 0.5rem 0;
-      }
-      .parallax-container {
-        width: 5rem;
-        height: 5rem;
-      }
-    
-      .hero-wrap h2 {
-        margin-left: 4rem; /* Further reduced margin for mobile */
-      }
-      h2 {
-        font-size: 2rem;
-      }
-        .aboutme-text {
-          padding: 0 !important; 
-          margin: 0 auto !important;
-          max-width: none !important;
-          width: 100% !important;
-          font-size: 1rem !important;
-      }
-      .aboutme-container, .aboutme-text {
-        padding: 0 !important;
-        margin: 0 auto !important;
-        width: 90% !important;
-        box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
-    }
-    .aboutme-image img {
-      max-width: 100% !important;
-      margin-left: 1.2rem; /* Center the image */
-      display: block; /* Ensure the image is a block element */
-      align-items: center;
-    }
-    
-      }
-  
-  
-.content-wrap {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-section{
-  min-height: 100vh;
-}
-
-#AboutMe {
+  position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color: #344b5f;
-
 }
-.aboutme-container {
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, .book-title, .section-title {
+  font-family: var(--font-header);
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 0px #000;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* --- HERO SECTION --- */
+#Hero {
+  background: linear-gradient(rgba(26, 34, 56, 0.8), rgba(26, 34, 56, 0.9)), url('crates.png');
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+}
+
+.hero-text h1 { font-size: 8rem; margin: 0; color: var(--accent-color); }
+.hero-text h2 { font-size: 5rem; margin: 0; color: #fff; }
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  animation: bounce 2s infinite;
+  opacity: 0.7;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-10px);}
+  60% {transform: translateY(-5px);}
+}
+
+/* --- BOOK SHOWCASE (THE PROFESSIONAL PART) --- */
+.book-section {
+  /* Subtle alternating background colors for variety */
+  background-color: var(--primary-bg);
+}
+.book-section:nth-child(even) {
+  background-color: #151b2d;
+}
+
+.book-display-wrapper {
   display: flex;
+  width: 80%;
+  max-width: 1200px;
   justify-content: space-between;
   align-items: center;
-  padding: 2em;
-  margin-left: 3em;
+  transition: opacity 0.5s ease;
 }
 
-.aboutme-text {
+.book-info {
   flex: 1;
-  padding-right: 2em;
-  color: #fff;
+  padding-right: 3rem;
+  animation: slideInLeft 1s ease;
+}
+
+.book-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.book-desc {
+  margin-bottom: 2rem;
   font-size: 1.2rem;
+  max-width: 500px;
 }
 
-.aboutme-image {
+/* Buttons */
+.btn-preview, .btn-purchase {
+  padding: 12px 24px;
+  font-family: var(--font-header);
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-right: 10px;
+}
+
+.btn-preview {
+  background-color: #fff;
+  color: #000;
+}
+
+.btn-purchase {
+  background-color: var(--accent-color);
+  color: #000;
+}
+
+.btn-preview:hover, .btn-purchase:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Cover Image Area */
+.book-cover {
   flex: 1;
-  text-align: right;
-  margin-right: 15%;
-  
-}
-
-.aboutme-image img {
-  max-width: 60%;
-  height: auto;
-  border-radius: 5px; 
-}
-
-
-
-#Section1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #036298;
-
-}
-#Ended-Section {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  background-color: #772828;
-
-}
-#Section2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; 
-    background-color: #dc7a62;
-}
-#Standalone1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; 
-    background-color: #dc7a62;
-}
-#FanArt{
-   /*  */
-    position: relative;
-    width: 100%;
-    min-height: 200vh;
-  }
-
-#Section3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; 
-  background-color: #25c1c3;
-}
-#Section4 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; 
-  background-color: #0e5161;
-}
-#Image-Gallery {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; 
-  background-color: #344b5f;
+  cursor: pointer;
+  animation: slideInRight 1s ease;
 }
 
-
-
-
-.flipbook-container {
-  align-items: flex-start;
-  display: flex;
-  justify-content: center;
-  margin: auto;
+.cover-img {
+  max-height: 70vh;
+  max-width: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
 }
 
-.flipbook-container-outter {
-  position: relative;
+.book-cover:hover .cover-img {
+  transform: scale(1.05) rotate(2deg);
 }
 
-.flipbook-container-inner {
-  bottom: 0;
-  left: 0;
-  right: 0;
+.tap-hint {
+  margin-top: 15px;
+  font-family: var(--font-header);
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+/* --- FLIPBOOK OVERLAY --- */
+.flipbook-overlay {
+  position: absolute;
   top: 0;
-  z-index: 1;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.95);
+  z-index: 100;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;  /* Set to 100% of the viewport height */
-  width: 100vw;   /* Set to 100% of the viewport width */
-  transition: width 0.5s;
-  position: relative;
 }
 
 .flipbook {
-  transition: margin-left 0.25s ease-out;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  transform-origin: 0 0;
-  height: auto;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 
-.flipbook .page {
-    height: 100%;
-    width: 100%;
+.exit-button {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  background: red;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  z-index: 200;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
+/* --- NAVIGATION --- */
+#navbar {
+  position: fixed;
+  right: 0;
+  top: 25%;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.5);
+  text-align: right;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-family: var(--font-header);
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 900px) {
+  .book-display-wrapper {
+      flex-direction: column-reverse;
+      width: 90%;
+      text-align: center;
+  }
+  .book-info { padding-right: 0; margin-top: 20px;}
+  .book-title { font-size: 3rem; }
+  .hero-text h1 { font-size: 5rem; }
+  .cover-img { max-height: 40vh; }
+  #navbar { display: none; } /* Use hamburger logic here */
+}
+
+/* --- ANIMATIONS --- */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+
+
+.hero-word {
+  font-size: 8rem;
+  margin: 0;
+  line-height: 1;
+  color: var(--accent-color); /* Yellow */
+}
+
+
+
+
+
+/* --- TURN.JS IMAGE FIXES (UPDATED) --- */
+
+/* 1. Reset the Page Container 
+   DO NOT use width/height 100% here. Let turn.js calculate the page size. 
+   We only strictly set overflow to hide standard image bleed. */
+   .flipbook .page {
+    overflow: hidden; 
+    background-color: white; 
+    /* Remove width/height !important rules here */
+}
+
+/* 2. Force the IMAGE to fit the page container */
 .flipbook .page img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    max-width: unset;
-}
-
-.flipbook-container-inner.cover-clicked {
-    width: 100%;
-    height: 100%;
-    transition: margin-left 0.25s ease-out;
-}
-
-.flipbook .cover-page {
-    cursor: pointer;
-}
-.cover-clicked {
-    width: 100%;
-    height: 100%;
-    transition: all 0.5s ease-out;
-}
-.cover-image {
-    max-width: 80%;
-    max-height: 80vh;
-    object-fit: contain;
-    margin: auto; 
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transition: transform 0.5s;
-}
-.cover-image:hover{
-transform: scale(1.2);
-}
-.cover-image-hover {
-  transition: transform 0.5s;
-}
-
-.cover-image-hover:hover {
-  transform: scale(1.2);
-}
-
-.cover-image.active {
-    transform: scale(2); 
-}
-
-
-.exit-button{
-    position: fixed; 
-    top: 2px;
-    right: 2px;
-    background-color: transparent; 
-    color: rgb(171, 47, 47); 
-    font-weight: bold; 
-    border: none;
-    cursor: pointer;
-    font-size: 12px;
-    z-index: 2;
-}
-.cover-info-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-
-}
-
-.info-container {
-  position: absolute;
-  left: -40%; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-/* Styles for screens below 1100px */
-@media (max-width: 1100px) {
-  .cover-info-wrapper {
-    position: relative;
-    display: inline-block; /* To wrap the container around the image */
-  }
-  
-  .info-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center the content */
-    text-align: center; /* Center the text and button */
-    z-index: 2; /* To ensure it's above the cover image */
-  }
-  
-  .cover-image {
-    display: block; /* To remove any white space around the image */
-  }
-  .info-container {
-    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background for better readability */
-    padding: 1rem; /* Add some padding */
-    border-radius: 5px; /* Rounded corners */
-  }
-
-  /* Adjust the font size of h2 and button as per your preference */
-  .info-container h2 {
-    font-size: 1.5rem;
-  }
-
-  .info-container button {
-    font-size: 1rem;
-  }
-  #crisis-button{
-    display: none;
-  }
-}
-
-
-.purchase-button {
-  display: block;
-  margin-top: 1rem;
-  border: none;
-  padding: 10px 20px;
-  background-color: #000;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100%;
-}
-.comics-button {
-  position: relative;;
-  border: none;
-  padding: 10px 20px;
-  background-color: #000;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
- #HighRoads-button:hover, #solar-button:hover {
-  background-color: #444;
-}
-
-
-.book-title {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-#HighRoads-button{
-  display: none !important;
-}
-#crisis-button{
-  display: none !important;
-}
-#starwars-button{
-  display: none !important;
-}
-#solar-button{
-  background-color: #14323a;
-}
-
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.snap-container::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.snap-container {
--ms-overflow-style: none;  /* IE and Edge */
-scrollbar-width: none;  /* Firefox */
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-body::-webkit-scrollbar, .snap-container::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-body, .snap-container {
--ms-overflow-style: none;  /* IE and Edge */
-scrollbar-width: none;  /* Firefox */
-}
-
-
-/* Navigation Bar */
-
-.hamburger-menu {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1000;
-  display: none; /* initially hidden */
-}
-
-.hamburger-menu span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px;
-  background: #fffefe;
-}
-
-@media (max-width: 1100px) {
-  /* Display hamburger menu on small screens */
-  .hamburger-menu {
+    object-fit: fill; /* Stretches image to fit the container calculated by JS */
     display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* 3. Center the flipbook in the overlay */
+.flipbook-overlay {
+    /* We will handle display:flex in the JS to prevent jQuery conflicts */
+    justify-content: center;
+    align-items: center;
+    padding: 0; 
+}
+
+/* --- HERO BRANDING "CRATES O COMICS" --- */
+
+/* Container to align items horizontally */
+.hero-title-row {
+  display: flex;
+  align-items: center; /* Vertically center */
+  justify-content: center; /* Horizontally center */
+  /* Removed gap here, handling spacing in the wrapper */
+  position: relative;
+  flex-wrap: wrap; /* Allows wrapping on mobile */
+  margin-bottom: 20px; /* Space between title and "Portfolio" */
+}
+
+.hero-word {
+  font-size: 8rem;
+  margin: 0;
+  line-height: 1;
+  color: var(--accent-color); /* Yellow */
+  /* Add a heavy black outline for more comic feel */
+  -webkit-text-stroke: 3px black; 
+  text-shadow: 5px 5px 0px #000;
+}
+
+
+
+/* The actual logo image inside the circle */
+.hero-logo {
+  width: 75%; /* Shrink to fit inside the circle */
+  height: auto;
+  z-index: 10; /* Ensure logo is above bubbles */
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.8));
+  /* A slight tilt makes it feel more dynamic */
+  transform: rotate(-8deg);
+}
+
+/* The bubbles floating inside the "O" */
+
+
+/* Mobile adjustments */
+@media (max-width: 900px) {
+  .hero-title-row {
+      flex-direction: column; /* Stack vertically on phones */
+      gap: 15px;
   }
-
-  #navbar {
-    width: 100vw;
-    height: 100vh;
-    background-color: #1A2238;
-    overflow-y: auto;
-    position: fixed;
-    top: 0;
-    right: -100vw;
-    transition: right 0.5s;
-    z-index: 999;
+  .hero-word {
+      font-size: 6rem;
+       -webkit-text-stroke: 2px black;
+  }
+  .parallax-wrapper {
+      width: 140px;
+      height: 140px;
+      border-width: 6px;
+      margin: 10px 0;
+  }
 }
 
-#navbar.open {
-    right: 0;
-}
-}
+/* --- CONTACT SECTION & FOOTER --- */
 
-nav {
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 18rem; 
-  height: 100vh;
+/* Make the section a flex column so footer sits at bottom */
+#Contact {
+  background-color: #1A2238; /* Match the dark theme */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 3;
+  justify-content: space-between; /* Pushes footer to bottom */
 }
 
-#navbar a {
-  color: #fff; 
+.contact-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the form vertically */
+  padding-top: 50px; 
+}
+
+/* --- PROFESSIONAL FORM STYLING --- */
+#contact-form {
+  background-color: rgba(255, 255, 255, 0.05); /* Subtle box background */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  max-width: 600px;
+  margin: 0 auto; /* Center horizontally */
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-header);
+  color: var(--accent-color);
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+/* Comic Style Inputs */
+.comic-input {
+  width: 100%;
+  padding: 12px;
+  background-color: #fff;
+  border: 3px solid #000; /* Thick comic border */
+  border-radius: 5px; /* Slight roundness */
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: 0.3s;
+  box-sizing: border-box; /* Ensures padding doesn't widen the element */
+}
+
+.comic-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+  transform: scale(1.01);
+}
+
+/* Fix the Button Width */
+.submit-btn {
+  width: 100%;
+  font-size: 1.5rem;
+  margin-top: 10px;
+  border: 2px solid transparent;
+}
+
+.submit-btn:hover {
+  background-color: #fff;
+  color: #000;
+  border-color: var(--accent-color);
+}
+
+/* --- FOOTER --- */
+.site-footer {
+  width: 100%;
+  padding: 20px 0;
+  background-color: rgba(0,0,0,0.3);
+  text-align: center;
+  margin-top: auto; /* Ensures it stays at the bottom */
+}
+
+.footer-content p {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.9rem;
+  margin: 0 0 10px 0;
+}
+
+.social-links a {
+  color: var(--accent-color);
+  margin: 0 10px;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  transition: background 0.3s ease, transform 0.3s ease; 
+  font-family: var(--font-header);
+  letter-spacing: 1px;
+  transition: 0.3s;
 }
 
-#navbar a.active {
-  color: #39ae2c;
-  font-weight: bold;
-  font-size: 1.2em;
+.social-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
 }
 
-#navbar a:hover {
-  color: #39ae2c;
-  transform: scale(1.1);
-}
-
-.hidden {
-  display: none !important;
-}
-
-
-/* Contact Form */
-#Contact {
+/* --- BACK TO TOP BUTTON --- */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--accent-color);
+  color: #000;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color: #1A2238;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  border: 3px solid #000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  z-index: 1000;
+  transition: transform 0.3s;
+  opacity: 0.8;
 }
 
-#contact-form {
-  width: 80%; 
-  max-width: 600px; 
-  padding: 2em;
-  border-radius: 15px;
-  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
-  background-color: #344b5f;
+.back-to-top:hover {
+  transform: translateY(-5px) scale(1.1);
+  opacity: 1;
+  color: #000;
+  text-decoration: none;
 }
 
-#contact-form label {
-  display: block;
-  margin-bottom: 0.5em;
-  font-size: 1.2em; 
-  color: #fff;  
+/* Mobile adjust for form */
+@media (max-width: 600px) {
+  #contact-form {
+      padding: 1.5rem;
+      width: 90%;
+  }
 }
 
-#contact-form input, #contact-form textarea {
-  width: 100%;
-  padding: 0.5em;
-  border: none;  
-  border-radius: 5px;  
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1); 
-  margin-bottom: 1em;  
+/* --- ABOUT ME SECTION STYLES --- */
+
+#AboutMe {
+  background-color: #252f44; /* Slightly lighter than the main background for contrast */
 }
 
-#contact-form button {
-  display: block;
-  width: 100%;
-  padding: 1em;
-  margin-top: 1em;
-  background: #2f4353;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.2em;  
-  cursor: pointer;
-  transition: background 0.3s ease;
+.about-description p {
+  font-size: 1.3rem;
+  color: #e0e0e0;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
 }
 
-#contact-form button:hover {
-  background: #1a2a38;
-}
-
-
-.flipbook-notice {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: none;
-  background-color: rgba(255, 255, 255, 0.5);
-  color: rgb(0, 0, 0);
+/* Styling the Image to look like a Comic Card */
+.profile-wrapper {
+  position: relative;
   padding: 10px;
-  border-radius: 5px;
-  z-index: 10;
-  align-self: flex-start;  /* Align to the start of the flex container, overriding the center alignment */
+  display: inline-block;
 }
 
+.profile-img {
+  max-width: 100%;
+  max-height: 60vh; /* Prevents it from being too tall on big screens */
+  border: 4px solid #fff; /* White photo border */
+  box-shadow: 10px 10px 0px rgba(0,0,0,0.5); /* Hard comic shadow */
+  transform: rotate(2deg); /* Artistic tilt */
+  transition: transform 0.3s ease;
+}
 
-.flipbook-notice img {
-  height: 50px;
-  margin-left: 60%;
+.profile-img:hover {
+  transform: rotate(0deg) scale(1.02);
+  border-color: var(--accent-color);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  #AboutMe .row {
+      flex-direction: column-reverse; /* Puts image on top on mobile */
+      text-align: center;
+  }
   
+  .profile-img {
+      max-height: 40vh;
+      margin-bottom: 30px;
+  }
 }
 
-.cover-image-hover-enabled:hover {
-  transform: scale(1.1);  
+/* --- HERO SECTION UPDATES --- */
+
+.hero-wrap {
+  position: relative;
+  overflow: hidden; /* Keeps bubbles from scrolling the page */
 }
 
-.img-magnifier-container {
+/* Ensure text stays ON TOP of the bubbles */
+.content-wrap {
+  z-index: 10;
   position: relative;
 }
 
-.img-magnifier-glass {
-  position: absolute;
-  border: 3px solid #000;
+/* Update the Logo Circle to be solid */
+.parallax-wrapper {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
-  cursor: none;
-  width: 100px;
-  height: 100px;
+  border: 8px solid var(--accent-color);
+  
+  /* CHANGED: Make background solid dark blue so bubbles hide behind it */
+  background-color: var(--primary-bg); 
+  
+  box-shadow: 0 0 30px rgba(255, 204, 0, 0.5), inset 0 0 20px rgba(0,0,0,0.5);
+  margin: 0 30px;
+  z-index: 20; /* Ensure logo is higher than everything */
 }
 
-.gallery {
-  width: calc(100% + 20px); /* Adjusted to accommodate the side margins */
-  margin: 0 auto;
-  max-width: 1220px; /* Original max-width + 20px */
-  margin-left: -10px; /* To ensure the gallery doesn't shift due to the added margin on gallery items */
-}
-
-
-.gallery-item {
-  width: calc(33.333% - 20px); /* Subtracting 20px for the 10px gap on both sides */
-  margin: 10px; /* This will add a 10px gap to all sides */
-  transition: transform 0.3s, filter 0.3s;
-}
-
-.gallery-item:hover {
-  transform: scale(1.05); /* Slightly scale the image */
-  filter: brightness(1.2); /* Increase brightness */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/* Style for the background bubbles */
+.parallax-layer {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1; /* Sit way in the back */
+  pointer-events: none; /* Mouse clicks pass through them */
+  filter: blur(2px); /* Slight blur makes it look like depth of field */
 }
