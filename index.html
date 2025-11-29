@@ -1,339 +1,279 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior: smooth;">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CratesOComics | Portfolio</title>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <script type="text/javascript" src="turn.js"></script>
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-      
-    <title>CratesOComics</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="turn.js"></script>
 </head>
 <body>
+
   <header>
     <button class="hamburger-menu" aria-label="Menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
-  <nav id="navbar" class>
-      <a href="#Hero" class="active">Home</a>
-      <a href="#AboutMe">About Me</a>
-      <a href="#Section4">Solar</a>
-      <a href="#Ended-Section">Ended</a>
-      <a href="#Section1">HighRoads</a>
-      <a href="#Section2">Crisis Fan Art</a>
-      <a href="#Section3">Star Wars Fan Art</a>
-      <!--<a href="#Image-Gallery">Prints</a>-->
-      <a href="#Contact">Contact</a>
-  </nav>  
-</header>
+    <nav id="navbar">
+        <a href="#Hero" class="nav-link active">Home</a>
+        <a href="#AboutMe" class="nav-link">About Me</a>
+        <a href="#Standalone1" class="nav-link">Standalone</a>
+        <a href="#Standalone2" class="nav-link">Standalone</a>
+        <a href="#Section4" class="nav-link">Solar</a>
+        <a href="#Ended-Section" class="nav-link">Ended</a>
+        <a href="#Contact" class="nav-link">Contact</a>
+    </nav> 
+  </header>
 
   <div class="snap-container">
 
     <section id="Hero" class="hero-wrap snap-section">
-      <div class="content-wrap">
-        <h1>Crates</h1>
-        <div class="parallax-container">
-          <span value="-15"></span>
-          <span value="5"></span>
-          <span value="30"></span>
-          <span value="-5"></span>
-          <span value="15"></span>
-        </div>
-        <h2>Comics</h2>
-      </div>
-    </section>
+        
+        <div class="parallax-layer" value="2" style="background: rgba(255, 255, 255, 0.1); width: 100px; height: 100px; top: 10%; left: 10%;"></div>
+        <div class="parallax-layer" value="-4" style="background: rgba(255, 204, 0, 0.2); width: 60px; height: 60px; top: 20%; right: 20%;"></div>
+        <div class="parallax-layer" value="6" style="background: rgba(255, 255, 255, 0.05); width: 200px; height: 200px; bottom: 10%; left: 30%;"></div>
+        <div class="parallax-layer" value="-2" style="background: rgba(255, 204, 0, 0.3); width: 40px; height: 40px; bottom: 30%; right: 10%;"></div>
+        <div class="parallax-layer" value="4" style="background: rgba(255, 255, 255, 0.1); width: 80px; height: 80px; top: 50%; left: 5%;"></div>
 
-    <section class="Section snap-section" id="AboutMe">
-      <div class="aboutme-container">
-        <div class="aboutme-text">
-          <h2>About Me</h2>
-          <p>Hi, I love all things comics, so on this page you will see my original books (such as Ended and Super-Crew: Solar which are both now available on Amazon), and my upcoming project "Standalone" I hope you enjoy my work, feel free to send me a message with comments or questions.</p>
-        </div>
-        <div class="aboutme-image">
-          <img src="images/2023 08 03/IlMando.jpg" alt="About me">
-        </div>
-      </div>
-    </section>
-
-       <section class="Section snap-section" id="Section1">
-      <div class="flipbook-container">
-          <div class="flipbook-container-outter">
-              <div class="flipbook-container-inner">
-                  <div class="cover-info-wrapper">
-                  <div class="info-container">
-                      <h2 class="book-title">HighRoads</h2>
-                      <button class="purchase-button" id="HighRoads-button">Purchase</button>
-                  </div>
-                  <img class="cover-image" src="images/HighRoads/cover.png" draggable="false" alt="" />
+        <div class="content-wrap">
+            <div class="hero-title-row">
+                <h1 class="hero-word">CRATES</h1>
+                
+                <div class="parallax-wrapper">
+                    <img src="images/crates.png" alt="O" class="hero-logo parallax-logo">
                 </div>
-                <div class="flipbook-notice">
-                  <img src="images/arrow.png" alt="Arrow">
-                  <p>Click and drag to turn the page</p>
-                </div>
-            <!-- Keep flipbook initially hidden -->
-            <div class="flipbook" id="flipbook1" style="display: none;">
-              <div class="page"><img src="images/HighRoads/cover.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/HighRoads/2.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/HighRoads/3.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/HighRoads/4.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/HighRoads/5.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/HighRoads/back-cover.png" draggable="false" alt="" /></div>
+    
+                <h1 class="hero-word">COMICS</h1>
             </div>
             
-          </div>
+            <h2>Portfolio</h2>
         </div>
-      </div>
-      <button class="exit-button" style="display: none;">X</button>
     </section>
-    
-    <section class="Section snap-section" id="Section4">
-      <div class="flipbook-container">
-        <div class="flipbook-container-outter">
-          <div class="flipbook-container-inner">
-            <div class="cover-info-wrapper">
-              <div class="info-container">
-                  <h2 class="book-title">Super Crew:<br>Solar</h2></h2><p style="color: white;">Click to Preview</p>
-                  <a href="https://www.amazon.ca/Super-Crew-Solar-Curtis-M-Dykstra/dp/B0C2S6BLNH/ref=sr_1_1?crid=3FPOI2Y20H5EG&keywords=curtis+dykstra&qid=1695472910&sprefix=curtis+dykstra%2Caps%2C107&sr=8-1" target="_blank">
-                  <button class="purchase-button" id="solar-button">Purchase</button> 
-                </a>
+    <section class="snap-section" id="AboutMe">
+        <div class="container">
+          <div class="row align-items-center">
+              
+              <div class="col-md-6">
+                  <h2 class="section-title">About The Artist</h2>
+                  <div class="about-description">
+                      <p>
+                          I love all things comics! On this page, you will see my original books—such as 
+                          <em>Ended</em> and <em>Super-Crew: Solar</em> (both now available on Amazon)—and 
+                          my upcoming project, "Standalone."
+                      </p>
+                      <p>
+                          I hope you enjoy my work. Feel free to send me a message with comments or questions!
+                      </p>
+                  </div>
+                  <a href="#Contact">
+                      <button class="btn-purchase" style="width: auto; padding: 10px 40px;">Message Me</button>
+                  </a>
               </div>
-              <img class="cover-image" src="images/2023 08 03/Super Crew Cover 1.jpg" draggable="false" alt="" />
-          </div>
-          <div class="flipbook-notice">
-            <img src="images/arrow.png" alt="Arrow">
-            <p>Click and drag to turn the page</p>
-          </div>
-
-             <div class="flipbook" id="flipbook4" style="display: none;">
-              <div class="page"><img src="images/2023 08 03/Super Crew Cover 1.jpg"" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Solar/1.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Solar/2.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Solar/3.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Solar/4.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Solar/back-cover.png" draggable="false" alt="" /></div>
-             
+  
+              <div class="col-md-6 text-center">
+                  <div class="profile-wrapper">
+                      <img src="images/cover.png" alt="About the Artist" class="profile-img">
+                  </div>
+              </div>
+  
           </div>
         </div>
-      </div>
-    <button class="exit-button" style="display: none;">X</button>
-    </section>
+      </section>
 
-    <section class="Section snap-section" id="Ended-Section">
-      <div class="flipbook-container">
-          <div class="flipbook-container-outter">
-              <div class="flipbook-container-inner">
-                  <div class="cover-info-wrapper">
-                  <div class="info-container">
-                      <h2 class="book-title">Ended</h2><p style="color: white;">Click to Preview</p>
-                      <a href="https://www.amazon.ca/Ended-Curtis-Dykstra-ebook/dp/B0C66VXG5N/ref=sr_1_4?crid=3FPOI2Y20H5EG&keywords=curtis+dykstra&qid=1695474681&sprefix=curtis+dykstra%2Caps%2C107&sr=8-4">
-                      <button class="purchase-button" id="Ended-button">Purchase</button>
+
+      <section class="snap-section book-section" id="Standalone1">
+        <button class="exit-button" style="display: none;">&times; Close Preview</button>
+        
+        <div class="book-display-wrapper">
+            <div class="book-info">
+                <h2 class="book-title">Standalone 1</h2>
+                <p class="book-desc">
+                    Witness the beginning of a new saga.
+                </p>
+                
+                <h3 style="color: var(--accent-color); font-family: var(--font-header); letter-spacing: 1px;">
+                    Releasing January 21, 2026
+                </h3>
+  
+                <div class="action-buttons">
+                    <button class="btn-preview" onclick="openBook('flipbookStandalone')">Read Preview</button>
+                    <button class="btn-purchase" style="opacity: 0.5; cursor: default;">Coming Soon</button>
+                </div>
+            </div>
+            <div class="book-cover" onclick="openBook('flipbookStandalone')">
+                <img src="images/Standalone1/Cover.png" alt="Standalone 1 Cover" class="cover-img shadow-hover">
+                <span class="tap-hint">Click Cover to Read</span>
+            </div>
+        </div>
+  
+        <div class="flipbook-overlay" id="flipbookStandalone-overlay" style="display:none;">
+           <div class="flipbook" id="flipbookStandalone">
+              <div class="page"><img src="images/Standalone1/Cover.png" draggable="false" /></div>
+              <div class="page"><img src="images/Standalone1/1.png" draggable="false" /></div>
+              <div class="page"><img src="images/Standalone1/2.png" draggable="false" /></div>
+              <div class="page"><img src="images/Standalone1/3.png" draggable="false" /></div>
+              <div class="page"><img src="images/Standalone1/4.png" draggable="false" /></div>
+              <div class="page"><img src="images/HighRoads/back-cover.png" draggable="false" /></div>
+           </div>
+        </div>
+      </section>
+    
+      <section class="snap-section book-section" id="Standalone2">
+        <button class="exit-button" style="display: none;">&times; Close Preview</button>
+        
+        <div class="book-display-wrapper">
+            <div class="book-info">
+                <h2 class="book-title">Standalone 2</h2>
+                <p class="book-desc">
+                    The saga continues. Dive deeper into the universe with the second installment of the Standalone series.
+                </p>
+                
+                <h3 style="color: var(--accent-color); font-family: var(--font-header); letter-spacing: 1px;">
+                    Releasing February 25, 2026
+                </h3>
+  
+                <div class="action-buttons">
+                    <button class="btn-preview" onclick="openBook('flipbookStandalone2')">Read Preview</button>
+                    <button class="btn-purchase" style="opacity: 0.5; cursor: default;">Coming Soon</button>
+                </div>
+            </div>
+            
+            <div class="book-cover" onclick="openBook('flipbookStandalone2')">
+                <img src="images/standalone2/cover.png" alt="Standalone 2 Cover" class="cover-img shadow-hover">
+                <span class="tap-hint">Click Cover to Read</span>
+            </div>
+        </div>
+  
+        <div class="flipbook-overlay" id="flipbookStandalone2-overlay" style="display:none;">
+           <div class="flipbook" id="flipbookStandalone2">
+              <div class="page"><img src="images/standalone2/cover.png" draggable="false" /></div>
+              <div class="page"><img src="images/standalone2/1.png" draggable="false" /></div>
+              <div class="page"><img src="images/standalone2/2.png" draggable="false" /></div>
+              <div class="page"><img src="images/standalone2/3.png" draggable="false" /></div>
+              <div class="page"><img src="images/standalone2/4.png" draggable="false" /></div>
+              <div class="page"><img src="images/standalone2/back-cover.png" draggable="false" /></div>
+           </div>
+        </div>
+      </section>
+    <section class="snap-section book-section" id="Section4">
+        <button class="exit-button" style="display: none;">&times; Close Preview</button>
+        <div class="book-display-wrapper">
+            <div class="book-info">
+                <h2 class="book-title">Super Crew: Solar</h2>
+                <p class="book-desc">
+                    When Naseer, an unemployed accountant, accidentally discovers he has super powers he is thrust into a larger, and much more dangerous, world. But can his new found powers help him conquer his self-doubt and feelings of worthlessness?
+                </p>
+                <div class="action-buttons">
+                    <button class="btn-preview" onclick="openBook('flipbook4')">Read Preview</button>
+                    <a href="https://www.amazon.ca/Super-Crew-Solar-Curtis-M-Dykstra/dp/B0C2S6BLNH" target="_blank">
+                        <button class="btn-purchase">Buy on Amazon</button>
                     </a>
+                </div>
+            </div>
+            <div class="book-cover" onclick="openBook('flipbook4')">
+                <img src="images/2023 08 03/Super Crew Cover 1.jpg" alt="Solar Cover" class="cover-img shadow-hover">
+                <span class="tap-hint">Click Cover to Read</span>
+            </div>
+        </div>
+  
+        <div class="flipbook-overlay" id="flipbook4-overlay" style="display:none;">
+           <div class="flipbook" id="flipbook4">
+              <div class="page"><img src="images/2023 08 03/Super Crew Cover 1.jpg" draggable="false" /></div>
+              <div class="page"><img src="images/Solar/1.png" draggable="false" /></div>
+              <div class="page"><img src="images/Solar/2.png" draggable="false" /></div>
+              <div class="page"><img src="images/Solar/3.png" draggable="false" /></div>
+              <div class="page"><img src="images/Solar/4.png" draggable="false" /></div>
+              <div class="page"><img src="images/Solar/back-cover.png" draggable="false" /></div>
+           </div>
+        </div>
+    </section>
+
+    <section class="snap-section book-section" id="Ended-Section">
+        <button class="exit-button" style="display: none;">&times; Close Preview</button>
+        <div class="book-display-wrapper">
+            <div class="book-info">
+                <h2 class="book-title">Ended</h2>
+                <p class="book-desc">
+                    The world ended. They didn't. Not yet, at least.
+                </p>
+                <div class="action-buttons">
+                    <button class="btn-preview" onclick="openBook('flipbookEnded')">Read Preview</button>
+                    <a href="https://www.amazon.ca/Ended-Curtis-Dykstra-ebook/dp/B0C66VXG5N" target="_blank">
+                        <button class="btn-purchase">Buy on Amazon</button>
+                    </a>
+                </div>
+            </div>
+            <div class="book-cover" onclick="openBook('flipbookEnded')">
+                <img src="images/Ended/Ended1title.jpg" alt="Ended Cover" class="cover-img shadow-hover">
+                <span class="tap-hint">Click Cover to Read</span>
+            </div>
+        </div>
+  
+        <div class="flipbook-overlay" id="flipbookEnded-overlay" style="display:none;">
+           <div class="flipbook" id="flipbookEnded">
+              <div class="page"><img src="images/Ended/Ended1title.jpg" draggable="false" /></div>
+              <div class="page"><img src="images/Ended/1.png" draggable="false" /></div>
+              <div class="page"><img src="images/Ended/2.png" draggable="false" /></div>
+              <div class="page"><img src="images/Ended/3.png" draggable="false" /></div>
+              <div class="page"><img src="images/Ended/4.png" draggable="false" /></div>
+              <div class="page"><img src="images/HighRoads/back-cover.png" draggable="false" /></div>
+           </div>
+        </div>
+    </section>
+
+    
+
+    <section class="snap-section" id="Contact">
+        <div class="contact-wrapper">
+          
+          <div class="container custom-container">
+              <h2 class="section-title text-center">Get In Touch</h2>
+              <p class="text-center" style="color: #ccc; margin-bottom: 30px;">
+                  Have a question or just want to talk comics? Drop me a line below.
+              </p>
+              
+              <form id="contact-form" action="https://formspree.io/f/moqojrlo" method="POST">
+                  <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" id="name" name="name" class="comic-input" required>
                   </div>
-                  <img class="cover-image" src="images/Ended/Ended1title.jpg" draggable="false" alt="" />
-                </div>
-                <div class="flipbook-notice">
-                  <img src="images/arrow.png" alt="Arrow">
-                  <p>Click and drag to turn the page</p>
-                </div>
-            <!-- Keep flipbook initially hidden -->
-            <div class="flipbook" id="flipbook1" style="display: none;">
-              <div class="page"><img src="images/Ended/Ended1title.jpg" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Ended/1.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Ended/2.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Ended/3.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Ended/4.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/HighRoads/back-cover.png" draggable="false" alt="" /></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="exit-button" style="display: none;">X</button>
-    </section>
-
-       <section class="Section snap-section" id="Standalone1">
-      <div class="flipbook-container">
-          <div class="flipbook-container-outter">
-              <div class="flipbook-container-inner">
-                  <div class="cover-info-wrapper">
-                  <div class="info-container">
-                      <h2 class="book-title">Standalone 1</h2>
-                      <button class="purchase-button" id="Standalone1-button">Purchase</button>
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" name="email" class="comic-input" required>
                   </div>
-                  <img class="cover-image" src="images/Standalone1/Cover.png" draggable="false" alt="" />
-                </div>
-                <div class="flipbook-notice">
-                  <img src="images/arrow.png" alt="Arrow">
-                  <p>Click and drag to turn the page</p>
-                </div>
-            <!-- Keep flipbook initially hidden -->
-            <div class="flipbook" id="flipbookStandalone" style="display: none;">
-              <div class="page"><img src="images/Standalone1/Cover.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Standalone1/1.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Standalone1/2.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Standalone1/3.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Standalone1/4.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Standalone1/back-cover.png" draggable="false" alt="" /></div>
-            </div>
-            
+                  <div class="form-group">
+                      <label for="message">Message</label>
+                      <textarea id="message" name="message" rows="5" class="comic-input" required></textarea>
+                  </div>
+                  <button type="submit" class="btn-purchase submit-btn">Send Message</button>
+              </form>
           </div>
-        </div>
-      </div>
-      <button class="exit-button" style="display: none;">X</button>
-    </section>
-
-   
-
-    <section class="Section snap-section" id="Section2">
-      <div class="flipbook-container">
-        <div class="flipbook-container-outter">
-          <div class="flipbook-container-inner">
-            <div class="cover-info-wrapper">
-            <div class="info-container">
-              <h2 class="book-title">Crisis</h2>
-              <button class="purchase-button" id="crisis-button" style="display: none;" ></button>
-          </div>
-          <img class="cover-image" src="images/Crisis/cover.png" draggable="false" alt="" />
-        </div>
-        <div class="flipbook-notice">
-          <img src="images/arrow.png" alt="Arrow">
-          <p>Click and drag to turn the page</p>
-        </div>
-            <!-- Keep flipbook initially hidden -->
-            <div class="flipbook" id="flipbook2" style="display: none;">
-              <div class="page"><img src="images/Crisis/cover.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Crisis/2.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Crisis/3.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Crisis/4.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Crisis/5.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Crisis/6.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Crisis/7.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Crisis/8.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Crisis/9.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Crisis/10.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Crisis/11.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Crisis/12.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Crisis/13.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Crisis/14.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Crisis/15.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Crisis/16.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Crisis/17.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/Crisis/back-cover.png" draggable="false" alt="" /></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="exit-button" style="display: none;">X</button>
-    </section>
-
-    <section class="Section snap-section" id="Section3">
-      <div class="flipbook-container">
-        <div class="flipbook-container-outter">
-          <div class="flipbook-container-inner">
-            <div class="cover-info-wrapper">
-              <div class="info-container">
-                  <h2 class="book-title">Star Wars</h2>
-                  <button class="purchase-button" id="starwars-button" style="display: none;" ></button>
+  
+          <footer class="site-footer">
+              <div class="footer-content">
+                  <p>&copy; 2024 Crates O Comics. All Art & Stories by Curtis Dykstra.</p>
+                  <div class="social-links">
+                      <a href="https://www.instagram.com/cratesocomics/" target="_blank">Instagram</a>
+                  </div>
               </div>
-              <img class="cover-image" src="images/StarWars/cover.png" draggable="false" alt="" />
-          </div>
-          <div class="flipbook-notice">
-            <img src="images/arrow.png" alt="Arrow">
-            <p>Click and drag to turn the page</p>
-          </div>
-
-             <div class="flipbook" id="flipbook3" style="display: none;">
-              <div class="page"><img src="images/StarWars/cover.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/StarWars/1.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/StarWars/2.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/StarWars/3.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/StarWars/4.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/StarWars/5.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/StarWars/6.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/StarWars/7.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/StarWars/back.png" draggable="false" alt="" /></div>
-              <div class="page"><img src="images/StarWars/back-cover.png" draggable="false" alt="" /></div>
-            </div>
-          </div>
+          </footer>
+  
         </div>
-      </div>
-    <button class="exit-button" style="display: none;">X</button>
-    </section>
-    <!--
-  <section class="Section snap-section" id="Image-Gallery">
-    <h4>Solo Print Showcase</h4>
-    <div class="gallery" data-masonry='{ "itemSelector": ".gallery-item" }'>
-      <a href="/images/2023 08 03/Avengers vs JLAcolor.jpg" data-lightbox="gallery">
-          <img src="/images/2023 08 03/Avengers vs JLAcolor.jpg" alt="Avengers Colour photo" class="gallery-item">
-      </a>
-      <a href="/images/2023 08 03/Batfleck.jpg" data-lightbox="gallery">
-        <img src="/images/2023 08 03/Batfleck.jpg" alt="Ben Afleck as Batman" class="gallery-item">
-    </a>
-    <a href="/images/2023 08 03/Cavill.jpg" data-lightbox="gallery">
-      <img src="/images/2023 08 03/Cavill.jpg" alt="Henry Cavill As Super Man" class="gallery-item">
-  </a>
-  <a href="/images/2023 08 03/Crossover.jpg" data-lightbox="gallery">
-    <img src="/images/2023 08 03/Crossover.jpg" alt="Crossover" class="gallery-item">
-</a>
-<a href="/images/2023 08 03/DOFP Xavier.jpg" data-lightbox="gallery">
-  <img src="/images/2023 08 03/DOFP Xavier.jpg" alt="Xavier" class="gallery-item">
-</a>
-<a href="/images/2023 08 03/Greenarrow.jpg" data-lightbox="gallery">
-  <img src="/images/2023 08 03/Greenarrow.jpg" alt="Green Arrow " class="gallery-item">
-</a>
-<a href="/images/2023 08 03/Hughie.jpg" data-lightbox="gallery">
-  <img src="/images/2023 08 03/Hughie.jpg" alt="Hugh Jackman" class="gallery-item">
-</a>
-<a href="/images/2023 08 03/IlMando.jpg" data-lightbox="gallery">
-  <img src="/images/2023 08 03/IlMando.jpg" alt="Mandalorian" class="gallery-item">
-</a>
-<a href="/images/2023 08 03/JusticE.jpg" data-lightbox="gallery">
-  <img src="/images/2023 08 03/JusticE.jpg" alt="Justice League" class="gallery-item">
-</a>
-<a href="/images/2023 08 03/Mamoa Aquaman.jpg" data-lightbox="gallery">
-  <img src="/images/2023 08 03/Mamoa Aquaman.jpg" alt="Aquaman" class="gallery-item">
-</a>
-<a href="/images/2023 08 03/Ned Stark.jpg" data-lightbox="gallery">
-  <img src="/images/2023 08 03/Ned Stark.jpg" alt="Ned Stark" class="gallery-item">
-</a>
-<a href="/images/2023 08 03/Reed Richards.jpg" data-lightbox="gallery">
-  <img src="/images/2023 08 03/Reed Richards.jpg" alt="Reed Richards" class="gallery-item">
-</a>
+        
+        <a href="#Hero" class="back-to-top" title="Back to Top">
+          &#8679; </a>
+      </section>
 
-  </div>  
-  </section>
--->
-    
-  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    <script type="text/javascript" src="main.js"></script>
-
-    <section class="Section snap-section" id="Contact">
-      <form id="contact-form" action="https://formspree.io/f/moqojrlo" method="POST">
-        <h3>Send me a message!</h3>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-        <input type="text" name="_gotcha" style="display:none" />
-        <button type="submit">Send</button>
-        <div id="form-result"></div> <!-- This will hold the result message -->
-      </form>  
-    </section>
-  </div>
-
-    
-
-    
-
+  </div> <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
